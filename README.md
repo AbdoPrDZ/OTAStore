@@ -110,3 +110,7 @@ android/        native project (MainApplication, the ApkInstaller module, manife
   the store still browses but installs fall back to the browser.
 - Installing apps requires the user to allow "install unknown apps" once; the app detects this and links
   straight to the setting.
+
+## License
+
+[GPL-3.0-or-later](LICENSE) — full text in [`LICENSE`](LICENSE).
