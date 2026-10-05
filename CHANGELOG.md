@@ -5,6 +5,15 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/).
 
+## [1.0.1] - 2026-10-05
+
+### Changed
+
+- **Default server points at the hosted OTACenter.** `DEFAULT_BASE_URL` in `src/api/client.ts` now
+  defaults to `https://abdopr-otacenter.duckdns.org` instead of a local development address, so a fresh
+  build reaches the public center without editing the source. `runtimeVersion` stays `1.0.0` (no native
+  change), so existing installs can still receive this as an over-the-air bundle.
+
 ## [1.0.0] - 2026-10-05
 
 ### Added

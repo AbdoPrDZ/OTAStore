@@ -1,6 +1,6 @@
 import type { BaseResponse } from './types';
 
-export const DEFAULT_BASE_URL = 'http://172.16.40.112:80';
+export const DEFAULT_BASE_URL = 'https://abdopr-otacenter.duckdns.org';
 
 function normalize(url: string): string {
   return url.trim().replace(/\/+$/, '');
