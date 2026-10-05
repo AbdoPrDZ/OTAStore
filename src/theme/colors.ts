@@ -1,0 +1,25 @@
+export type ThemeColors = {
+  primary: string;
+  primaryDark: string;
+  primarySoft: string;
+  background: string;
+  surface: string;
+  surfaceMuted: string;
+  text: string;
+  textSecondary: string;
+  textOnPrimary: string;
+  border: string;
+  success: string;
+  successBackground: string;
+  warning: string;
+  warningBackground: string;
+  error: string;
+  errorBackground: string;
+  danger: string;
+  dangerBackground: string;
+  info: string;
+  infoBackground: string;
+  disabled: string;
+  disabledBackground: string;
+  overlay: string;
+};

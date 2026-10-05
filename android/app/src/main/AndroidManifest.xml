@@ -1,0 +1,64 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <!-- Required to hand a downloaded .apk to the system package installer. -->
+    <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
+    <!-- Required to detect whether a store app is installed and at which
+         version. This is a self-distributed OTA store, not a Play listing. -->
+    <uses-permission android:name="android.permission.QUERY_ALL_PACKAGES" />
+
+    <application
+      android:name=".MainApplication"
+      android:label="@string/app_name"
+      android:icon="@mipmap/ic_launcher"
+      android:roundIcon="@mipmap/ic_launcher_round"
+      android:allowBackup="false"
+      android:theme="@style/AppTheme"
+      android:usesCleartextTraffic="${usesCleartextTraffic}"
+      android:networkSecurityConfig="@xml/network_security_config"
+      android:supportsRtl="true">
+
+      <!-- ota-client configuration: the API key must belong to a published
+           version of this app's package (dz.abdopr.apps.otastore). -->
+      <meta-data
+        android:name="ota_client_api_base_url"
+        android:value="http://172.16.40.112:80" />
+      <meta-data
+        android:name="ota_client_api_version"
+        android:value="v1" />
+      <meta-data
+        android:name="ota_client_api_key"
+        android:value="REPLACE_WITH_OTA_API_KEY" />
+      <meta-data
+        android:name="ota_client_main_activity"
+        android:value="dz.abdopr.apps.otastore.MainActivity" />
+      <meta-data
+        android:name="ota_client_allow_in_debug"
+        android:value="false" />
+
+      <!-- Serves downloaded APKs to the package installer without exposing
+           a file:// URI across apps. -->
+      <provider
+        android:name="androidx.core.content.FileProvider"
+        android:authorities="${applicationId}.fileprovider"
+        android:exported="false"
+        android:grantUriPermissions="true">
+        <meta-data
+          android:name="android.support.FILE_PROVIDER_PATHS"
+          android:resource="@xml/file_paths" />
+      </provider>
+
+      <activity
+        android:name=".MainActivity"
+        android:label="@string/app_name"
+        android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize|uiMode"
+        android:launchMode="singleTask"
+        android:windowSoftInputMode="adjustResize"
+        android:exported="true">
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+      </activity>
+    </application>
+</manifest>
