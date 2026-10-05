@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 
-import AppLogo from '@/components/AppLogo';
+import AppLogo from '@/components/BrandLogo';
 import TopBar from '@/components/TopBar';
 import { AppCard, AppText } from '@/components/ui';
 import { useConfig } from '@/context/ConfigContext';
@@ -102,7 +102,7 @@ export default () => {
 
       <ScrollView contentContainerStyle={styles.content}>
         <View style={styles.brand}>
-          <AppLogo name="OTAStore" size={80} />
+          <AppLogo size={80} />
           <AppText variant="hero" style={styles.name}>
             OTAStore
           </AppText>

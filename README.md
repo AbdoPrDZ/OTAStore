@@ -79,7 +79,7 @@ On a physical device over USB you can also use `npm run reverse` to forward Metr
 ### Checks
 
 ```sh
-npm run typecheck  # tsc --noEmit
+npx tsc --noEmit   # type check
 npm run lint       # eslint
 npm test           # jest
 ```

@@ -5,6 +5,22 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/).
 
+## [1.0.2] - 2026-10-05
+
+### Changed
+
+- **New brand mark.** The store's own logo is now the OTACenter cloud + push-arrow artwork
+  (`src/assets/Logo.png`, with `Logo.svg` kept alongside it as the vector source) instead of the letter
+  tile the `AppLogo` fallback draws. `AppLogo` takes an optional `src` and renders a bundled mark as-is,
+  and the new `BrandLogo` component binds the asset for the app's own branding — the **Splash**,
+  **Sign in** and **About** screens, where the mark is also noticeably larger.
+- **New Android launcher icon.** `ic_launcher` is redrawn from the same artwork at every density, with the
+  adaptive layers (`ic_launcher_adaptive_back` / `ic_launcher_adaptive_fore`) and `mipmap-anydpi-v26` for
+  API 26+, which also fills the round-icon slot the manifest asks for.
+- `versionCode` 2 / `versionName` `1.0.2` in `android/app/build.gradle`, because the launcher icon ships
+  inside the APK: installed builds are offered the new one, while `runtimeVersion` stays `1.0.0` so the
+  JavaScript still reaches them over the air.
+
 ## [1.0.1] - 2026-10-05
 
 ### Changed

@@ -3,14 +3,14 @@ import { ActivityIndicator, StyleSheet, View } from 'react-native';
 
 import { spacing, useTheme } from '@/theme';
 import { AppText } from '@/components/ui';
-import AppLogo from '@/components/AppLogo';
+import AppLogo from '@/components/BrandLogo';
 
 export default () => {
   const { colors } = useTheme();
 
   return (
     <View style={[styles.container, { backgroundColor: colors.background }]}>
-      <AppLogo name="OTAStore" size={88} />
+      <AppLogo size={168} />
       <AppText variant="hero" style={styles.title}>
         OTAStore
       </AppText>

@@ -9,7 +9,7 @@ import {
 import { useTranslation } from 'react-i18next';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
-import AppLogo from '@/components/AppLogo';
+import AppLogo from '@/components/BrandLogo';
 import HeaderActions from '@/components/HeaderActions';
 import { AppButton, AppCard, AppInput, AppText } from '@/components/ui';
 import { useAuth } from '@/context/AuthContext';
@@ -70,7 +70,7 @@ export default ({ navigation }: RootStackScreenProps<'Login'>) => {
           keyboardDismissMode="interactive"
         >
           <View style={styles.logoWrap}>
-            <AppLogo name="OTAStore" size={72} />
+            <AppLogo size={128} />
             <AppText variant="hero" style={styles.brand}>
               OTAStore
             </AppText>

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Image, StyleSheet, View } from 'react-native';
+import { Image, ImageSourcePropType, StyleSheet, View } from 'react-native';
 
 import { useTheme } from '@/theme';
 import { AppText } from './ui';
@@ -7,11 +7,12 @@ import { AppText } from './ui';
 export type AppLogoProps = {
   name: string;
   logoUrl?: string | null;
+  src?: ImageSourcePropType;
   size?: number;
   circular?: boolean;
 };
 
-export default ({ name, logoUrl, size = 48, circular = false }: AppLogoProps) => {
+export default ({ name, logoUrl, src, size = 48, circular = false }: AppLogoProps) => {
   const { colors, radius } = useTheme();
 
   const shared = {
@@ -26,6 +27,10 @@ export default ({ name, logoUrl, size = 48, circular = false }: AppLogoProps) =>
     return (
       <Image source={{ uri: logoUrl }} style={shared} resizeMode="cover" />
     );
+  }
+
+  if (src) {
+    return <Image source={src} style={{ width: size, height: size }} resizeMode="contain" />;
   }
 
   return (
